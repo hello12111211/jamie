@@ -331,17 +331,8 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
-  if (url.hostname === 'html5.api.gamedistribution.com') {
-    log('fetch', 'Blocked external request to', url.href);
-    event.respondWith(new Response('Not found', { status: 404 }));
-    return;
-  }
   if (url.origin !== self.location.origin) return;
   if (url.pathname.startsWith('/api/')) return;
-  if (url.pathname.startsWith('/math/')) return;
-  if (url.pathname.includes('/client_status')) return;
-  if (url.pathname.startsWith('/auth/postback/')) return;
-  if (url.pathname.startsWith('/media/')) return;
   if (url.pathname === '/') return;
   
   event.respondWith((async () => {
