@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const ROOT_DIR = path.join(__dirname, '..');
+const ROOT_DIR = path.join(__dirname, '.');
 const PUBLIC_DIR = ROOT_DIR;
 const UPLOADS_DIR = path.join(ROOT_DIR, 'uploads');
 const COMMENTS_UPLOAD_DIR = path.join(UPLOADS_DIR, 'comments');
